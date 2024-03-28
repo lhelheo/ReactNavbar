@@ -13,31 +13,38 @@ const Dashboard = () => {
     { id: 10, nome: "Produto J", preco: "R$55,00", estoque: 6, categoria: "Bebidas", validade: "30/09/2025" }
   ];
   
-
   return (
     <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-gray-600">
         <thead className="text-xs text-blue-400 uppercase bg-gray-200">
+          
           <tr>
             <th scope="col" className="py-6 px-6">
               Produto
             </th>
+
             <th scope="col" className="px-6">
               Preço
             </th>
+
             <th scope="col" className="px-6">
               Estoque
             </th>
+
             <th scope="col" className="px-6">
               Categoria
             </th>
+
             <th scope="col" className="px-6">
               Validade
             </th>
+
           </tr>
         </thead>
+
         <tbody>
           {dados.map((item) => (
+            
             <tr key={item.id} className="border-b bg-gray-300 border-gray-400">
               <td className="py-3 px-6">{item.nome}</td>
               <td className="py-3 px-6">{item.preco}</td>
@@ -47,6 +54,7 @@ const Dashboard = () => {
             </tr>
           ))}
         </tbody>
+        
       </table>
     </div>
   );

@@ -3,11 +3,14 @@ import React from 'react';
 const Customer = ({ image, title, description }) => {
   return (
     <div className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden m-4">
+      
       <img className="object-cover object-center w-full h-40 rounded-t-lg" src={image} alt={title} />
+      
       <div className="p-20">
         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
       </div>
+
     </div>
   );
 };
@@ -44,6 +47,7 @@ const Customers = () => {
 
   return (
     <div className="container mx-auto">
+      
       <div className="w-full flex justify-center">
         <div className="flex flex-wrap justify-center">
           {customersData.map((customer, index) => (
@@ -51,6 +55,7 @@ const Customers = () => {
           ))}
         </div>
       </div>
+
     </div>
   );
 };

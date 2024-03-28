@@ -13,11 +13,6 @@ import DocType from './routes/DocType.jsx'
 import Properties from './routes/Properties.jsx'
 import Integrations from './routes/Integrations.jsx'
 
-// const router =  createBrowserRouter([
-//   { path: '/', element: <Home /> },
-//   { path: 'contact', element: <Contact /> },
-// ]);
-
 const router =  createBrowserRouter([
   { path: '/', 
   element: <App />,
