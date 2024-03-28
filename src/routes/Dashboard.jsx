@@ -16,8 +16,8 @@ const Dashboard = () => {
 
   return (
     <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-      <table className="w-full text-sm text-left text-gray-300 dark:text-gray-400 ">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table className="w-full text-sm text-left text-gray-600">
+        <thead className="text-xs text-blue-400 uppercase bg-gray-200">
           <tr>
             <th scope="col" className="py-6 px-6">
               Produto
@@ -38,7 +38,7 @@ const Dashboard = () => {
         </thead>
         <tbody>
           {dados.map((item) => (
-            <tr key={item.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr key={item.id} className="border-b bg-gray-300 border-gray-400">
               <td className="py-3 px-6">{item.nome}</td>
               <td className="py-3 px-6">{item.preco}</td>
               <td className="py-3 px-6">{item.estoque}</td>

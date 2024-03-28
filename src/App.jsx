@@ -26,7 +26,7 @@ function App() {
   
   // Melhoria 1: Código copiado, como poderia reutilizar o atributo className="flex items-center"?
   return (
-    <header className="">
+    <header>
       <nav className="">
         
         <div className="flex justify-between bg-gray-100">
