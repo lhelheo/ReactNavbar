@@ -17,6 +17,8 @@ export default {
 
       '2xl': {'max': '1536px'},
       // => @media (min-width: 1536px) { ... }
+      'custom-sm': '970px',
+      'custom-lg': '1123px',
     },
     extend: {},
   },

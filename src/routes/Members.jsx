@@ -22,12 +22,12 @@ const Members = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center p-4">
+    <section className="flex flex-col items-center p-4 gap-10">
       {items.map((item) => (
         
-        <div key={item.id} className="flex items-center space-x-4">
+        <div key={item.id} className="flex items-start space-x-4 ">
           
-          <img src={item.imgSrc} alt="" className="w-24 h-24 object-cover rounded-md" />
+          <img src={item.imgSrc} alt="" className="w-24 h-24 my-2 object-cover rounded-md" />
           
           <div className="max-w-md">
             <h3 className="text-lg font-semibold text-blue-500">{item.title}</h3>

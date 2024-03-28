@@ -10,33 +10,44 @@ import { FaCodeBranch } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { CiSettings } from "react-icons/ci";
 import NavOption from "../NavOption";
+import React, { useState } from 'react';
+
 
 const Navbar = () => {
-  const navButtonsStyle = "flex items-center gap-1 hover:text-blue-600 duration-200 hover:border-b-2 hover:border-blue-600 hover:font-bold cursor-pointer whitespace-nowrap";
+  const navButtonsStyle = "flex items-center gap-1 hover:text-blue-600 duration-200 hover:border-b-2 hover:border-blue-600 hover:font-bold cursor-pointer whitespace-nowrap lg:text-sm"; // Reduz o tamanho da fonte no breakpoint lg
+  const responsiveFont = "md:py-5 custom-sm:text-md text-lg text-black"; 
   const rightOptions = "w-7 h-6 cursor-pointer";
-  const responsiveFont = "md:py-5";
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   //TODO: Criar componente de rota
   return (
-    <nav className="flex justify-between items-center bg-gray-100 w-full p-4">
-      <div className="flex gap-6">
+    <nav className="flex justify-between items-center w-full p-4 flex-wrap">
+      <div className="flex md:flex gap-6">
         
-        <NavOption to="/" className="flex items-center gap-2"  Icon={DiJsBadge} label="Empresa" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
+        <div className="text-blue-600">
+          <NavOption 
+            to="/" 
+            Icon={DiJsBadge} 
+            label="Empresa" 
+            navButtonsStyle={navButtonsStyle} 
+            responsiveFont={responsiveFont}
+          />
+        </div>
         
-        <div className="visible md:invisible md:hidden  flex gap-6">
-          <NavOption to="/dashboard" Icon={RxDashboard} label="Dashboard" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
+        <div className="visible md:hidden  flex gap-6">
+          <NavOption to="/dashboard" Icon={RxDashboard} label="Dashboard" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont}  />
           <NavOption to="/members" Icon={CgProfile} label="Members" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
           <NavOption to="/customers" Icon={RiCustomerService2Fill} label="Customers" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
           <NavOption to="/billings" Icon={RiBillLine} label="Billings" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
           <NavOption to="/plans" Icon={RiMoneyDollarCircleLine} label="Plans" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
           <NavOption to="/doctype" Icon={IoIosDocument} label="DocType" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />        
-          <NavOption to="/properties" Icon={LuTableProperties} label="properties" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont}/>
-          <NavOption to="/integrations" Icon={FaCodeBranch} label="integrations" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont}/>
+          <NavOption to="/properties" Icon={LuTableProperties} label="Properties" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
+          <NavOption to="/integrations" Icon={FaCodeBranch} label="Integrations" navButtonsStyle={navButtonsStyle} responsiveFont={responsiveFont} />
         </div>
 
       </div>
 
-      <div className="flex items-center pr-8 gap-3">
+      <div className="flex items-center gap-3">
         <CiSearch className={`${rightOptions}`} />
         <CiSettings className={`${rightOptions}`} />
         <DiJsBadge className="h-6 w-6 text-blue-600 rounded-full" />

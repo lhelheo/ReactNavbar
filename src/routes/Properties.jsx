@@ -34,7 +34,7 @@ const Properties = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-blue-400 mx-auto rounded-lg shadow- s p-10">
+    <div className="flex flex-col justify-center items-center bg-blue-400 rounded-lg shadow-md p-10">
 
       <div className='p-10 m-3 bg-white rounded-lg'>
         <h2 className='font-bold text-xl'>Desempenho</h2>
