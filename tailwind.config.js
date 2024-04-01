@@ -16,9 +16,11 @@ export default {
       // => @media (min-width: 1280px) { ... }
 
       '2xl': {'max': '1536px'},
+      'custom-resp1': {'max': '1225px'},
+      'custom-resp2': '1225px',
       // => @media (min-width: 1536px) { ... }
       'custom-sm': '970px',
-      'custom-lg': '1123px',
+      'custom-lg': '1225px',
     },
     extend: {},
   },
