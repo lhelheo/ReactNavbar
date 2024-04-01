@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const NavOption = ({ to, Icon, label, navButtonsStyle, responsiveFont }) => {
-  const navigate = useNavigate(); 
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false); 
-
-  // Alterna a visibilidade do dropdown
-  const toggleDropdown = () => {
-    setIsDropdownVisible(!isDropdownVisible);
-  };
+  const navigate = useNavigate(); // Hook do React Router para navegação programática
 
   return (
     <div className="group flex flex-col relative">
-      <div className={`flex items-center gap-2 ${navButtonsStyle} cursor-pointer`} onClick={toggleDropdown}>
+      <Link to={to} className={`flex items-center gap-2 ${navButtonsStyle}`}>
         <Icon />
         <p className={responsiveFont}>{label}</p>
-      </div>
+      </Link>
 
-      <ul className={`z-10 bg-gray-100 w-full text-blue-500 border-solid border-l-2 pl-2 border-sky-500  ${isDropdownVisible ? 'block' : 'hidden'}`}>
-        <li className='hover:bg-slate-300 hover:text-white cursor-pointer' onClick={() => {navigate('/'); toggleDropdown();}}>Texto 1</li>
-        <li className='hover:bg-slate-300 hover:text-white cursor-pointer' onClick={() => {navigate('/'); toggleDropdown();}}>Texto 2</li>
-        <li className='hover:bg-slate-300 hover:text-white cursor-pointer' onClick={() => {navigate('/'); toggleDropdown();}}>Texto 3</li>
+      {/* Dropdown se torna visível ao passar o mouse */}
+      <ul className={`z-10 bg-gray-100 w-full text-blue-500 hidden group-hover:block block`}>
+        {/* Todos os itens li redirecionam para a página inicial ao clicar */}
+        <li className='hover:bg-slate-300 hover:text-white cursor-pointer' onClick={() => navigate('/')}>Texto 1</li>
+        <li className='hover:bg-slate-300 hover:text-white cursor-pointer' onClick={() => navigate('/')}>Texto 2</li>
+        <li className='hover:bg-slate-300 hover:text-white cursor-pointer' onClick={() => navigate('/')}>Texto 3</li>
       </ul>
     </div>
   );

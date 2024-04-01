@@ -22,6 +22,7 @@ export default {
       'custom-sm': '970px',
       'custom-lg': '1225px',
     },
+
     extend: {},
   },
   plugins: [],
